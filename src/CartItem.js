@@ -13,8 +13,8 @@ class CartItem extends React.Component{
         }
     }
 
-    increaseQuantity(){
-        console.log(this);
+    increaseQuantity = ()=>{
+        console.log(this.state);
     }
 
     render(){
@@ -31,7 +31,7 @@ class CartItem extends React.Component{
                 <div style={{color:'#777'}}>Rs {price}</div>
                 <div style={{color:'#777'}}>qty: {qty}</div>
                 <div className="cart-item-actions">
-                    <img className="action-icons" onClick={increaseQuantity} src="https://www.svgrepo.com/show/506282/plus-circle.svg"/>
+                    <img className="action-icons" onClick={this.increaseQuantity} src="https://www.svgrepo.com/show/506282/plus-circle.svg"/>
                     <img className="action-icons" src="https://www.svgrepo.com/show/505437/minus-circle.svg"/>
                     <img className="action-icons" src="https://www.svgrepo.com/show/447911/bin.svg"/>
                 </div>

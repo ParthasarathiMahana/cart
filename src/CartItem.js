@@ -2,31 +2,6 @@ import React from "react";
 
 class CartItem extends React.Component{
 
-    // creating states
-    constructor(){
-        super();
-        this.state = {
-            title : "Mobile Phone",
-            price : 9999,
-            qty : 1, 
-            img :''
-        }
-
-        // this.testing();
-    }
-
-    // testing(){
-    //     var promise = new Promise((resolve, reject)=>{
-    //         setTimeout(()=>{resolve('done')}, 5000);
-    //     });
-
-    //     promise.then(()=>{
-    //         this.setState({qty: this.state.qty+10});
-    //         this.setState({qty: this.state.qty+10});
-    //         this.setState({qty: this.state.qty+10});
-    //     })
-    // }
-
     increaseQuantity = ()=>{
         // method 1 to use setState
         // this.setState({
@@ -56,7 +31,7 @@ class CartItem extends React.Component{
 
     render(){
     
-        const {title, price, qty} = this.state;
+        const {title, price, qty} = this.props.product;
 
         return(
         <div className="cart-item">
@@ -64,7 +39,7 @@ class CartItem extends React.Component{
                 <img style={styles.image}/>
             </div>
             <div className="right-block">
-                <div style={{fontSize:25}}>{this.state.title}</div>                
+                <div style={{fontSize:25}}>{title}</div>                
                 <div style={{color:'#777'}}>Rs {price}</div>
                 <div style={{color:'#777'}}>qty: {qty}</div>
                 <div className="cart-item-actions">

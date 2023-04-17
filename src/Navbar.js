@@ -1,11 +1,11 @@
 import React from "react";
 
-const Navbar = () =>{
+const Navbar = (props) =>{
     return(
         <div style={styles.nav}>
             <div style={styles.cartIconContainer}>
                 <img style={styles.cartIcon} src="https://www.svgrepo.com/show/506144/cart-4.svg" alt="cart-icon"/>
-                <span style={styles.cartCount}>3</span>
+                <span style={styles.cartCount}>{props.cartCount}</span>
             </div>
         </div>
     );

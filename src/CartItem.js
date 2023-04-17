@@ -6,7 +6,7 @@ const CartItem=(props) => {
             onIncreaseQty,
             onDecreaseQty,
             onDeleteItem
-        } = props.product;
+        } = props;
 
         return(
         <div className="cart-item">

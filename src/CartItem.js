@@ -1,9 +1,12 @@
-import React from "react";
+const CartItem=(props) => {
+        const {title, price, qty} = props.product;
 
-class CartItem extends React.Component{
-
-    render(){
-        const {title, price, qty} = this.props.product;
+        const {
+            product,
+            onIncreaseQty,
+            onDecreaseQty,
+            onDeleteItem
+        } = props.product;
 
         return(
         <div className="cart-item">
@@ -17,22 +20,22 @@ class CartItem extends React.Component{
                 <div className="cart-item-actions">
                     <img 
                         className="action-icons" 
-                        onClick={() => {this.props.onIncreaseQty(this.props.product)}} 
+                        onClick={() => {onIncreaseQty(product)}} 
                         src="https://www.svgrepo.com/show/506282/plus-circle.svg"
                     />
                     <img 
                         className="action-icons" 
-                        onClick={()=>{this.props.onDecreaseQty(this.props.product)}} 
+                        onClick={()=>{onDecreaseQty(product)}} 
                         src="https://www.svgrepo.com/show/505437/minus-circle.svg"
                     />
                     <img 
                         className="action-icons" 
                         src="https://www.svgrepo.com/show/447911/bin.svg"
-                        onClick={()=>{this.props.onDeleteItem(this.props.product.id)}}/>
+                        onClick={()=>{onDeleteItem(product.id)}}/>
                 </div>
             </div>
         </div>
-    );}
+    );
 }
 
 const styles = {

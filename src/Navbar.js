@@ -30,7 +30,7 @@ const styles = {
     cartCount: {
       background: 'yellow',
       borderRadius: '50%',
-      padding: '1px 6px',
+      padding: '1px 8px',
       position: 'absolute',
       right: 10,
       top: -9

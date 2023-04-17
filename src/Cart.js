@@ -62,7 +62,7 @@ class Cart extends React.Component{
         return(
             <div className="cart">
                 {products.map((product)=>{
-                    return <CartItem 
+                    return <CartItem
                         product={product} 
                         key={product.id}
                         onIncreaseQty={this.increaseQty}

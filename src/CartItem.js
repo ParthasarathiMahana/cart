@@ -11,7 +11,21 @@ class CartItem extends React.Component{
             qty : 1, 
             img :''
         }
+
+        // this.testing();
     }
+
+    // testing(){
+    //     var promise = new Promise((resolve, reject)=>{
+    //         setTimeout(()=>{resolve('done')}, 5000);
+    //     });
+
+    //     promise.then(()=>{
+    //         this.setState({qty: this.state.qty+10});
+    //         this.setState({qty: this.state.qty+10});
+    //         this.setState({qty: this.state.qty+10});
+    //     })
+    // }
 
     increaseQuantity = ()=>{
         // method 1 to use setState
@@ -29,9 +43,14 @@ class CartItem extends React.Component{
 
     decreaseQuantity = () => {
         this.setState((prevState)=>{
-            return{
-                qty : prevState.qty-1
+            if(prevState.qty > 0){
+                return{
+                    qty : prevState.qty-1
+                }
             }
+
+            return;
+            
         })
     }
 

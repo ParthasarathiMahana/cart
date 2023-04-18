@@ -66,6 +66,18 @@ class App extends React.Component
     return count;
   }
 
+  getCartTotal = () => {
+    const {products} = this.state;
+    
+    var total = 0;
+
+    products.map((product)=>{
+      total += product.qty * product.price;
+    });
+
+    return total;
+  }
+
 
   render(){
     const {products} = this.state;
@@ -78,6 +90,7 @@ class App extends React.Component
           onDecreaseQty={this.decreaseQty}
           onDeleteItem={this.deleteItem}  
         />
+      <div>Total: {this.getCartTotal()}</div>
       </div>
     );
   }
